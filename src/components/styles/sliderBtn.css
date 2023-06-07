@@ -5,11 +5,11 @@
   border: 1px solid rgba(190, 190, 190, 0.3);
   border-radius: 0.75rem;
   backdrop-filter: blur(10px);
-  background-color: rgba(32, 32, 32, 0.6);
+  background-color: rgba(65, 65, 65, 0.3);
   z-index: 98;
   height: 50px;
   width: 50px;
-  box-shadow: inset 10px -50px 94px 0 rgba(3, 3, 3, 0.2);
+  box-shadow: inset 10px -50px 90px 0 rgba(109, 109, 109, 0.2);
 }
 
 .sliderBtn:active {

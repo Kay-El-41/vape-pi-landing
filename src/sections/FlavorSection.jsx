@@ -9,7 +9,7 @@ import { useState } from 'react'
 const SlideCard = ({ title, desc, img }) => {
   return (
     <div
-      className="flavor_card_long"
+      className="flavor-card-long"
       style={{
         background: `url(${img}) no-repeat left`,
       }}
@@ -17,7 +17,7 @@ const SlideCard = ({ title, desc, img }) => {
       <div>
         <h4 className="flavor-title">{title && title}</h4>
         <p className="flavor-desc">{desc && desc}</p>
-        {title && <ViewBtn />}
+        <ViewBtn />
       </div>
     </div>
   )
@@ -33,7 +33,7 @@ const FlavorSection = () => {
   }
 
   return (
-    <section className="flavor_section">
+    <section className="flavor-section">
       <Swiper
         spaceBetween={'6px'}
         slidesPerView={'auto'}
@@ -50,11 +50,19 @@ const FlavorSection = () => {
         </SwiperSlide>
 
         <SwiperSlide style={{ width: 'auto', height: '240px' }}>
-          <SlideCard img={'/covers/v2.png'} />
+          <SlideCard
+            title={'Placeholder'}
+            desc={'Placeholder'}
+            img={'/covers/v2.png'}
+          />
         </SwiperSlide>
 
         <SwiperSlide style={{ width: 'auto', height: '240px' }}>
-          <SlideCard img={'/covers/v3.png'} />
+          <SlideCard
+            title={'Placeholder'}
+            desc={'Placeholder'}
+            img={'/covers/v3.png'}
+          />
         </SwiperSlide>
 
         {!isAtFirstSlide > 0 && <SlidePrev />}

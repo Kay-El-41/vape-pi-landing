@@ -1,8 +1,8 @@
-.flavor_section {
-  margin-top: 22px;
+.flavor-section {
+  padding-block: 22px 23px;
 }
 
-.flavor_card_long {
+.flavor-card-long {
   width: 366px;
   height: 240px;
   color: #fff;
@@ -10,36 +10,36 @@
   border-radius: 10px;
 }
 
-.flavor_card_long > div {
+.flavor-card-long > div {
   padding-top: 45px;
   margin-left: 20px;
 }
 
-.flavor_card_long h4 {
+.flavor-card-long h4 {
   font-size: 40px;
   font-weight: bold;
 }
 
-.flavor_card_long p {
+.flavor-card-long p {
   font-size: 18px;
   padding-block: 15px;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  .flavor_card_long {
+  .flavor-card-long {
     width: 552px;
   }
-  .flavor_card_long > div {
+  .flavor-card-long > div {
     padding-top: 65px;
   }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .flavor_card_long {
+  .flavor-card-long {
     width: 738px;
   }
-  .flavor_card_long > div {
+  .flavor-card-long > div {
     text-align: center;
     margin-left: 350px;
   }
@@ -47,20 +47,20 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .flavor_card_long {
+  .flavor-card-long {
     width: 924px;
   }
-  .flavor_card_long > div {
+  .flavor-card-long > div {
     margin-left: 500px;
   }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  .flavor_card_long {
+  .flavor-card-long {
     width: 1110px;
   }
-  .flavor_card_long > div {
+  .flavor-card-long > div {
     margin-left: 700px;
   }
 }
