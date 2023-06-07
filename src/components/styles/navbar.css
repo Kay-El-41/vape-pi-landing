@@ -1,4 +1,32 @@
 .nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  padding: 20px 30px;
   display: flex;
-  justify-content: space-between ;
+  justify-content: space-between;
+  z-index: 99;
+  transition: background-color 0.5s ease;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link-icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: #fff;
+}
+
+.nav-link-icon:nth-child(2) {
+  transform: scaleX(-1);
+}
+
+@media only screen and (min-width: 992px) {
+  .nav {
+    padding: 20px 165px;
+  }
 }

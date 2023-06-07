@@ -1,0 +1,21 @@
+.viewmore-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 240px;
+  border-radius: 25px;
+  border: none;
+  background-color: var(--color-gray);
+  color: var(--text-color);
+  font-size: 14px;
+  margin-inline: auto;
+}
+
+.viewmore-btn:hover {
+  background-color: rgba(3, 3, 3, 0.1);
+}
+
+.viewmore-btn:active {
+  transform: scale(0.98);
+}

@@ -1,0 +1,200 @@
+.best-deal-section {
+  padding: 20px 20px 0;
+}
+
+.best-deal-section-1 {
+  text-align: center;
+}
+
+.best-deal-products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.best-deal-section-2 {
+  margin-block: 45px 22px;
+  display: grid;
+  grid-template-areas:
+    'mem mem'
+    'dev pod'
+    'dev dis';
+  gap: 6px;
+  justify-content: center;
+}
+
+.d-card {
+  position: relative;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.deal-card-1 {
+  grid-area: mem;
+  background: url('/cards/c1.png');
+  width: 366px;
+  height: 358px;
+}
+
+.deal-card-1 > div {
+  margin-left: 35px;
+}
+
+.deal-card-2 {
+  grid-area: dev;
+  background: url('/cards/c2.png');
+  width: 180px;
+  height: 358px;
+}
+
+.deal-card-3 {
+  grid-area: pod;
+  background: url('/cards/c3.png');
+  width: 180px;
+  height: 176px;
+}
+
+.deal-card-4 {
+  grid-area: dis;
+  background: url('/cards/c4.png');
+  width: 180px;
+  height: 176px;
+}
+
+.deal-card-1 h3 {
+  margin-block: 120px 30px;
+  font-family: var(--bolded-caption);
+  font-size: 40px;
+}
+
+.best-deal-section-2 h4 {
+  margin-left: 20px;
+  line-height: 1.5;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 100px;
+}
+
+.best-deal-section-2 p {
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.deal-card-2 h4 {
+  margin-top: 285px;
+}
+
+.deal-card-1 p {
+  margin: 0 0 15px;
+  font-size: 20px;
+}
+.deal-card-arrow {
+  position: absolute;
+  right: 20px;
+  bottom: 50px;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .deal-card-1 {
+    width: 552px;
+  }
+  .deal-card-2,
+  .deal-card-3,
+  .deal-card-4 {
+    width: 273px;
+  }
+  .deal-card-1 h3 {
+    margin-block: 155px 30px;
+    font-family: var(--bolded-caption);
+    font-size: 45px;
+  }
+}
+
+/* Medium devices (landscape tablets, 800px and up) */
+@media only screen and (min-width: 800px) {
+  .best-deal-section-2 {
+    grid-template-areas:
+      'mem dev dev'
+      'mem pod dis';
+  }
+  .deal-card-1 {
+    width: 366px;
+  }
+
+  .deal-card-2 {
+    width: 366px;
+    height: 176px;
+  }
+
+  .deal-card-3,
+  .deal-card-4 {
+    width: 180px;
+  }
+  .deal-card-1 h3 {
+    font-size: 40px;
+    margin-block: 120px 30px;
+  }
+  .deal-card-2 h4 {
+    margin-top: 100px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .best-deal-section-2 {
+    grid-template-areas:
+      'mem dev pod'
+      'mem dev dis';
+  }
+  .deal-card-1 {
+    width: 481px;
+  }
+
+  .deal-card-2 {
+    width: 217px;
+    height: 358px;
+  }
+
+  .deal-card-3,
+  .deal-card-4 {
+    width: 217px;
+  }
+
+  .deal-card-1 h3 {
+    margin-block: 155px 10px;
+  }
+
+  .deal-card-2 h4 {
+    margin-top: 285px;
+  }
+
+  .best-deal-section-2 p {
+    margin-left: 20px;
+  }
+
+  .deal-card-1 p {
+    margin-bottom: 10px;
+    margin-left: 0;
+    font-size: 16px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1170px) {
+  .deal-card-1 {
+    width: 665px;
+  }
+
+  .deal-card-1 h3 {
+    margin-block: 155px 30px;
+  }
+
+  .deal-card-1 p {
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-left: 0;
+  }
+}

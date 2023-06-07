@@ -7,9 +7,42 @@
   --color-gray: #eaeaea;
   --text-color: #2d2d2d;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  /* Editing Swiper Conditions */
+  --swiper-pagination-color: #2d2d2d;
+  --swiper-pagination-bullet-size: 5px;
+  --swiper-pagination-bullet-width: 5px;
+  --swiper-pagination-bullet-height: 5px;
+  --swiper-pagination-bullet-horizontal-gap: 2.5px;
+  --swiper-pagination-bottom: 0px;
+
+  /* Fonts */
+  --bolded-caption: 'PT Sans Caption', sans-serif;
+  --product-font: 'Heebo', sans-serif;
+
+  --bolded-font-weight: 700;
+  --product-font-weight: 400;
+
+  font-family: var(--product-font);
+}
+
+.body {
+  width: 100vw;
+}
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+}
+
+.section-title {
+  font-family: var(--bolded-caption);
+  font-size: 45px;
+}
+
+.section-desc {
+  margin-block: 6px 35px;
+  font-weight: bold;
+  font-size: 18px;
 }
