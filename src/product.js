@@ -25,4 +25,31 @@ const productData = [
   },
 ]
 
-export { productData }
+const flavorData = [
+  {
+    cardId: 1,
+    img: '/flavor/f1.png',
+  },
+  {
+    cardId: 2,
+    img: '/flavor/f2.png',
+  },
+  {
+    cardId: 3,
+    img: '/flavor/f3.png',
+  },
+  {
+    cardId: 4,
+    img: '/flavor/f4.png',
+  },
+  {
+    cardId: 5,
+    img: '/flavor/f5.png',
+  },
+  {
+    cardId: 6,
+    img: '/flavor/f6.png',
+  },
+]
+
+export { productData, flavorData }

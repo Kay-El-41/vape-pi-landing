@@ -1,0 +1,32 @@
+.new-section {
+  padding: 20px 20px 0;
+  text-align: center;
+  margin-bottom: 23px;
+}
+
+.section-title span {
+  color: #ff4545;
+}
+
+.new-flavor-section {
+  margin-block: 35px 22px;
+}
+
+.flavor-card {
+  width: 275px;
+  height: 180px;
+  background-size: cover;
+  background-position: right 0;
+}
+
+.flavor-card h4 {
+  margin-top: 70px;
+  margin-left: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  width: 125px;
+}
+
+.flavor-card p {
+  font-size: 14px;
+}

@@ -6,7 +6,6 @@ import FlavorSection from './sections/FlavorSection'
 import Footer from './sections/Footer'
 import HeroSection from './sections/HeroSection'
 import NewReleasedSection from './sections/NewReleasedSection'
-import ProductSection from './sections/ProductSection'
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
       <main>
         <HeroSection />
         <BestDealSection />
-        <ProductSection />
         <NewReleasedSection />
         <FlavorSection />
         <DeviceSection />
