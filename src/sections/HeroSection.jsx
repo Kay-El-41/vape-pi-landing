@@ -1,6 +1,6 @@
 // Swiper & Swiper Styles Import
 import { Pagination, Autoplay } from 'swiper'
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
@@ -14,8 +14,6 @@ import './styles/herosection.css'
 import ViewBtn from '../components/ViewBtn'
 
 const HeroSection = () => {
-  const swiper = useSwiper()
-
   return (
     <section id="hero" className="hero">
       <Swiper
@@ -24,7 +22,6 @@ const HeroSection = () => {
         centeredSlides={true}
         pagination={{ clickable: true }}
         modules={[Pagination, Autoplay]}
-        onSwiper={swiper}
         loop={true}
       >
         {/* Cannot create a components for swiperSlider because it brokes!!*/}

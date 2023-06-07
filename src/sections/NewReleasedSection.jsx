@@ -7,7 +7,7 @@ const FlavorCard = ({ title, img }) => {
     <div
       className="flavor-card"
       style={{
-        background: `url(${img})`,
+        background: `url(${img}) no-repeat right`,
       }}
     >
       <h4>{title}</h4>
@@ -23,7 +23,13 @@ const NewReleasedSection = () => {
         <span>New</span> Released
       </h2>
       <p className="section-desc">Try Our Latest Flavors Here</p>
-      <div className="new-flavor-section"></div>
+      <div className="new-flavor-section">
+        {flavorData.map((flavor) => {
+          return (
+            <FlavorCard key={flavor.cardId} img={flavor.img} title={flavor.title} />
+          )
+        })}
+      </div>
       <ViewmoreBtn />
     </section>
   )

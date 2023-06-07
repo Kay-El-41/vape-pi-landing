@@ -1,6 +1,6 @@
 .sliderBtn {
   position: absolute;
-  top: 280px;
+  top: 50%;
   transform: translateY(-50%);
   border: 1px solid rgba(190, 190, 190, 0.3);
   border-radius: 0.75rem;

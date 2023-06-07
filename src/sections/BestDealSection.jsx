@@ -18,7 +18,7 @@ const BestDealSection = () => {
           {productData.map((product) => {
             return (
               <ProductCard
-                key={product.id}
+                key={product.cardId}
                 img={product.img}
                 color={'var(--color-gray)'}
                 discounted={true}

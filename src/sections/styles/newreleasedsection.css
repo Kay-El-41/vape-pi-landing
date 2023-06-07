@@ -9,18 +9,24 @@
 }
 
 .new-flavor-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
   margin-block: 35px 22px;
 }
 
 .flavor-card {
+  border-radius: 10px;
+  text-align: left;
   width: 275px;
   height: 180px;
-  background-size: cover;
-  background-position: right 0;
+  color: #fff;
 }
 
 .flavor-card h4 {
   margin-top: 70px;
+  line-height: 1.2;
   margin-left: 15px;
   font-size: 15px;
   font-weight: bold;
@@ -28,5 +34,25 @@
 }
 
 .flavor-card p {
+  line-height: 1.5;
   font-size: 14px;
+  margin-left: 15px;
+}
+
+@media only screen and (min-width: 800px) {
+  .flavor-card {
+    width: 366px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .flavor-card {
+    width: 459px;
+  }
+}
+
+@media only screen and (min-width: 1170px) {
+  .flavor-card {
+    width: 271.5px;
+  }
 }
