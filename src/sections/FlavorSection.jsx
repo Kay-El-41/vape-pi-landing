@@ -49,6 +49,7 @@ const FlavorSection = () => {
           />
         </SwiperSlide>
 
+        {/* Placeholder Cards */}
         <SwiperSlide style={{ width: 'auto', height: '240px' }}>
           <SlideCard
             title={'Placeholder'}
@@ -72,4 +73,10 @@ const FlavorSection = () => {
   )
 }
 
+// Prop validation
+SlideCard.propTypes = {
+  title: String,
+  img: String,
+  desc: String,
+}
 export default FlavorSection

@@ -1,8 +1,10 @@
-import ViewBtn from '../components/ViewBtn'
+import { productData } from '../product'
 import { RiArrowRightSLine } from 'react-icons/ri'
+
+// components
+import ViewBtn from '../components/ViewBtn'
 import ViewmoreBtn from '../components/ViewmoreBtn'
 import ProductCard from '../components/ProductCard'
-import { productData } from '../product'
 
 import './styles/bestdealsection.css'
 
@@ -12,15 +14,15 @@ const BestDealSection = () => {
       <div className="best-deal-section-1">
         <h2 className="section-title">Best Deals</h2>
         <p className="section-desc">Just For You</p>
+
+        {/* Deals Products */}
         <div className="best-deal-products">
           {/* mapping - products card */}
-
           {productData.map((product) => {
             return (
               <ProductCard
                 key={product.cardId}
                 img={product.img}
-                color={'var(--color-gray)'}
                 discounted={true}
               />
             )
@@ -28,7 +30,8 @@ const BestDealSection = () => {
         </div>
         <ViewmoreBtn />
       </div>
-      {/*  */}
+
+      {/* Deals Cards */}
       <div className="best-deal-section-2">
         <div className="d-card deal-card-1">
           <div>
@@ -40,6 +43,7 @@ const BestDealSection = () => {
             <ViewBtn />
           </div>
         </div>
+
         <div className="d-card deal-card-2">
           <h4>Devices</h4>
           <p>

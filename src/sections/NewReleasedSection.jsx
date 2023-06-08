@@ -1,6 +1,6 @@
-import ViewmoreBtn from '../components/ViewmoreBtn'
-import './styles/newreleasedsection.css'
 import { flavorData } from '../product'
+import './styles/newreleasedsection.css'
+import ViewmoreBtn from '../components/ViewmoreBtn'
 
 const FlavorCard = ({ title, img }) => {
   return (
@@ -26,13 +26,23 @@ const NewReleasedSection = () => {
       <div className="new-flavor-section">
         {flavorData.map((flavor) => {
           return (
-            <FlavorCard key={flavor.cardId} img={flavor.img} title={flavor.title} />
+            <FlavorCard
+              key={flavor.cardId}
+              img={flavor.img}
+              title={flavor.title}
+            />
           )
         })}
       </div>
       <ViewmoreBtn />
     </section>
   )
+}
+
+// Props Validation
+FlavorCard.propTypes = {
+  title: String,
+  img: String,
 }
 
 export default NewReleasedSection

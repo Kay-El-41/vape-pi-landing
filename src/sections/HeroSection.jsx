@@ -11,6 +11,7 @@ import SlidePrev from '../components/SlidePrev'
 
 // Section Styles
 import './styles/herosection.css'
+
 import ViewBtn from '../components/ViewBtn'
 
 const HeroSection = () => {
@@ -24,7 +25,7 @@ const HeroSection = () => {
         modules={[Pagination, Autoplay]}
         loop={true}
       >
-        {/* Cannot create a components for swiperSlider because it brokes!!*/}
+        {/* Cannot create a components for swiperSlider because it broke!!*/}
         <SwiperSlide style={{ width: 'auto', height: '595px' }}>
           <div className="hero-slide-content">
             <div className="hero-headers">
@@ -33,6 +34,7 @@ const HeroSection = () => {
               <p>Starts from 10,000 MMK</p>
               <ViewBtn />
             </div>
+            {/* Black gradient overlay */}
             <div className="hero-cover-overlay"></div>
             <img
               src="/hero-cover1.jpg"
@@ -42,6 +44,7 @@ const HeroSection = () => {
           </div>
         </SwiperSlide>
 
+        {/* 6 Placeholders */}
         <SwiperSlide style={{ width: 'auto', height: '595px' }}>
           <div className="hero-cover-overlay"></div>
           <img
@@ -91,6 +94,7 @@ const HeroSection = () => {
           />
         </SwiperSlide>
 
+        {/* Slide Control Buttons */}
         <SlideNext />
         <SlidePrev />
       </Swiper>

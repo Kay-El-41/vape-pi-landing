@@ -19,3 +19,10 @@
 .viewmore-btn:active {
   transform: scale(0.98);
 }
+
+@media only screen and (max-width: 400px) {
+  .viewmore-btn {
+    height: 40px;
+    width: 200px;
+  }
+}

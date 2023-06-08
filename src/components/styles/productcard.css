@@ -9,6 +9,7 @@
 }
 
 .card-image {
+  background-color: var(--color-gray);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

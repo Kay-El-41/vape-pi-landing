@@ -3,7 +3,8 @@
   border: 1px solid rgba(190, 190, 190, 0.3);
   border-radius: 25px;
   backdrop-filter: blur(10px);
-  background-color: rgba(32, 32, 32, 0.6);
+  background-color: rgba(3, 3, 3, 0.1);
+
   height: 40px;
   width: 80px;
   box-shadow: inset 10px -50px 94px 0 rgba(108, 108, 108, 0.1);
@@ -15,9 +16,16 @@
 }
 
 .view-btn:hover {
-  background-color: rgba(3, 3, 3, 0.1);
+  background-color: rgba(32, 32, 32, 0.6);
 }
 
 .view-btn:active {
   transform: scale(0.98);
+}
+
+@media only screen and (max-width: 400px) {
+  .view-btn {
+    width: 60px;
+    height: 30px;
+  }
 }

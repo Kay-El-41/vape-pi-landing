@@ -17,6 +17,7 @@
 }
 
 .flavor-card {
+  cursor: pointer;
   border-radius: 10px;
   text-align: left;
   width: 275px;
@@ -24,10 +25,15 @@
   color: #fff;
 }
 
+.flavor-card:hover {
+  box-shadow: 0px 2px 10px 1px rgba(66, 66, 66, 0.2) ;
+}
+
 .flavor-card h4 {
+  user-select: none;
   margin-top: 70px;
-  line-height: 1.2;
   margin-left: 15px;
+  line-height: 1.2;
   font-size: 15px;
   font-weight: bold;
   width: 125px;

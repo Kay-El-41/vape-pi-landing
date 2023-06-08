@@ -26,9 +26,14 @@
 }
 
 .d-card {
+  cursor: pointer;
   position: relative;
   color: #fff;
   border-radius: 10px;
+}
+
+.d-card:hover {
+  box-shadow: 0px 2px 10px 1px rgba(66, 66, 66, 0.2);
 }
 
 .deal-card-1 {
@@ -64,12 +69,22 @@
 }
 
 .deal-card-1 h3 {
+  user-select: none;
   margin-block: 120px 30px;
   font-family: var(--bolded-caption);
   font-size: 40px;
 }
 
+.deal-card-1 h3:hover {
+  color: orange;
+}
+
+.d-card h4:hover {
+  color: orange;
+}
+
 .best-deal-section-2 h4 {
+  user-select: none;
   margin-left: 20px;
   line-height: 1.5;
   font-weight: bold;
@@ -90,10 +105,40 @@
   margin: 0 0 15px;
   font-size: 20px;
 }
+
 .deal-card-arrow {
   position: absolute;
   right: 20px;
   bottom: 50px;
+}
+
+@media only screen and (max-width: 400px) {
+  .best-deal-section-2 {
+    margin-block: 45px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+  .deal-card-1,
+  .deal-card-2,
+  .deal-card-3,
+  .deal-card-4 {
+    width: 250px;
+  }
+
+  .deal-card-1 > div {
+    margin-top: 170px;
+    margin-left: 20px;
+  }
+
+  .deal-card-1 h3 {
+    font-size: 30px;
+  }
+
+  .deal-card-1 p {
+    font-size: 14px;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -186,6 +231,10 @@
 @media only screen and (min-width: 1170px) {
   .deal-card-1 {
     width: 665px;
+  }
+
+  .best-deal-section-2 p {
+    line-height: 1.1;
   }
 
   .deal-card-1 h3 {

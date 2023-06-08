@@ -25,6 +25,23 @@
   padding-block: 15px;
 }
 
+@media only screen and (max-width: 400px) {
+  .flavor-card-long {
+    width: 250px;
+  }
+
+  .flavor-card-long > div {
+    padding-top: 65px;
+  }
+  .flavor-card-long h4 {
+    font-size: 30px;
+  }
+
+  .flavor-card-long p {
+    font-size: 18px;
+  }
+}
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   .flavor-card-long {

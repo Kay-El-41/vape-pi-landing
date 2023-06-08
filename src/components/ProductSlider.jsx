@@ -1,16 +1,19 @@
-import { productData } from '../product'
-import ProductCard from '../components/ProductCard'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
 import { useState } from 'react'
+import { productData } from '../product'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+import 'swiper/css'
+import './styles/productslider.css'
+
+import ProductCard from '../components/ProductCard'
 import SlideNext from '../components/SlideNext'
 import SlidePrev from '../components/SlidePrev'
-import './styles/productslider.css'
 
 const ProductSlider = ({ bgImg, img, title, desc }) => {
   const [isAtFirstSlide, setFirstSlide] = useState(true)
   const [isAtLastSlide, setLastSlide] = useState(false)
 
+  // Show and Hide Buttons Based on Slide number
   const slideCheck = (swiper) => {
     swiper.isBeginning ? setFirstSlide(true) : setFirstSlide(false)
     swiper.isEnd ? setLastSlide(true) : setLastSlide(false)
@@ -50,7 +53,7 @@ const ProductSlider = ({ bgImg, img, title, desc }) => {
                 style={{ width: 'auto', height: 'auto' }}
                 key={product.cardId}
               >
-                <ProductCard img={product.img} color={'var(--color-gray)'} />
+                <ProductCard img={product.img} />
               </SwiperSlide>
             )
           })}
@@ -60,4 +63,10 @@ const ProductSlider = ({ bgImg, img, title, desc }) => {
   )
 }
 
+ProductSlider.propTypes = {
+  bgImg: String,
+  img: String,
+  title: String,
+  desc: String,
+}
 export default ProductSlider

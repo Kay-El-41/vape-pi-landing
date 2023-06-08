@@ -1,10 +1,10 @@
 import { TiStarFullOutline } from 'react-icons/ti'
 import './styles/productcard.css'
 
-const ProductCard = ({ img, color, discounted }) => {
+const ProductCard = ({ img, discounted }) => {
   return (
     <div className="product-card">
-      <div style={{ backgroundColor: color }} className="card-image">
+      <div className="card-image">
         {discounted ? <div className="discount-red">25% Off</div> : <div></div>}
         <img src={img} alt="" />
       </div>
@@ -17,6 +17,11 @@ const ProductCard = ({ img, color, discounted }) => {
       </div>
     </div>
   )
+}
+
+ProductCard.propTypes = {
+  img: String,
+  discounted: Boolean,
 }
 
 export default ProductCard

@@ -10,16 +10,20 @@ section.hero {
   text-align: center;
   color: #fff;
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   transform: translateX(-50%);
-  z-index: 3;
   width: 80%;
+  z-index: 3;
+}
+
+.hero-headers p:nth-child(1),
+.hero-headers p:nth-child(3) {
+  font-family: var(--product-font);
+  font-weight: var(--product-font-weight);
 }
 
 .hero-headers p:nth-child(1) {
-  font-family: var(--product-font);
-  font-weight: var(--product-font-weight);
   font-size: 25px;
 }
 
@@ -32,8 +36,6 @@ section.hero {
 }
 
 .hero-headers p:nth-child(3) {
-  font-family: var(--product-font);
-  font-weight: var(--product-font-weight);
   font-size: 20px;
   margin-bottom: 15px;
 }
@@ -80,11 +82,29 @@ section.hero {
   line-height: 1;
 }
 
-.tet {
+/* Check and Delete */
+/* .tet {
   height: 45px;
   position: absolute;
   bottom: 0;
   left: 50%;
+} */
+
+@media only screen and (max-width: 400px) {
+  .hero-headers {
+    top: 60%;
+  }
+  .hero-headers p:nth-child(1) {
+    font-size: 20px;
+  }
+
+  .hero-headers h1 {
+    font-size: 40px;
+  }
+
+  .hero-headers p:nth-child(3) {
+    font-size: 15px;
+  }
 }
 
 @media only screen and (min-width: 992px) {
