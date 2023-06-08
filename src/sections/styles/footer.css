@@ -1,0 +1,127 @@
+.footer-section {
+  padding: 22px 20px;
+  font-size: 14px;
+  line-height: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  width: 336px;
+}
+
+.footer-section .footer-title {
+  font-size: 20px;
+}
+
+.footer-payment img {
+  width: 60px;
+  height: 36px;
+  border-radius: 5px;
+  margin-right: 6px;
+  transition: all 0.3s ease;
+}
+
+.footer-payment img:hover {
+  transform: translateY(-2px);
+}
+
+.footer-language form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-follow img {
+  height: 30px;
+  margin-right: 6px;
+  transition: all 0.3s ease;
+}
+
+.footer-follow img:hover {
+  transform: translateY(-2px);
+}
+
+.footer-contact .address {
+  display: flex;
+}
+
+.footer-download img {
+  width: 120px;
+}
+
+.footer-copyright {
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 600px) {
+  .footer-container {
+    display: grid;
+    grid-template-areas:
+      'service language'
+      'payment follow'
+      'contact download'
+      'copyright copyright';
+    gap: 20px;
+    width: 552px;
+  }
+
+  .footer-customers {
+    grid-area: service;
+  }
+  .footer-payment {
+    grid-area: payment;
+  }
+  .footer-language {
+    grid-area: language;
+  }
+  .footer-follow {
+    grid-area: follow;
+  }
+  .footer-contact {
+    grid-area: contact;
+  }
+  .footer-download {
+    grid-area: download;
+  }
+  .footer-copyright {
+    grid-area: copyright;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .footer-container {
+    grid-template-areas:
+      'service language download'
+      'payment follow contact'
+      'copyright copyright copyright';
+    width: 738px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .footer-container {
+    position: relative;
+    padding-bottom: 50px;
+    grid-template-areas:
+      'service language  contact download'
+      'payment follow .  .';
+    gap: 10px;
+    width: 924px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .footer-copyright {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .footer-container {
+    width: 1110px;
+  }
+}
