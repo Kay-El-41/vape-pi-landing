@@ -4,6 +4,10 @@ import { TbPhone } from 'react-icons/tb'
 import './styles/footer.css'
 
 const Footer = () => {
+  const langOnChange = (e) => {
+    console.log('Language changed to ' + e.target.value)
+  }
+
   return (
     <div className="footer-section">
       <div className="footer-container">
@@ -31,15 +35,34 @@ const Footer = () => {
           <h5 className="footer-title">Language</h5>
           <form action="">
             <label htmlFor="mmuni">
-              <input type="radio" name="lang" id="mmuni" />
+              <input
+                type="radio"
+                name="lang"
+                id="mmuni"
+                value="mm-unicode"
+                onChange={langOnChange}
+              />
               Myanmar (Unicode)
             </label>
             <label htmlFor="mmzaw">
-              <input type="radio" name="lang" id="mmzaw" />
+              <input
+                type="radio"
+                name="lang"
+                id="mmzaw"
+                value="mm-zawgyi"
+                onChange={langOnChange}
+              />
               Myanmar (Zawgyi)
             </label>
             <label htmlFor="en">
-              <input type="radio" name="lang" id="en" checked />
+              <input
+                type="radio"
+                name="lang"
+                id="en"
+                defaultChecked
+                value="english"
+                onChange={langOnChange}
+              />
               English
             </label>
           </form>

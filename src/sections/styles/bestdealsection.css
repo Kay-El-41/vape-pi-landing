@@ -172,6 +172,7 @@
   .deal-card-2 {
     width: 366px;
     height: 176px;
+    background-position: 50% 20%;
   }
 
   .deal-card-3,
@@ -201,6 +202,7 @@
   .deal-card-2 {
     width: 217px;
     height: 358px;
+    background-position: 0;
   }
 
   .deal-card-3,

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { flavorData } from '../product'
 import './styles/newreleasedsection.css'
 import ViewmoreBtn from '../components/ViewmoreBtn'
@@ -41,8 +42,8 @@ const NewReleasedSection = () => {
 
 // Props Validation
 FlavorCard.propTypes = {
-  title: String,
-  img: String,
+  title: PropTypes.string,
+  img: PropTypes.string,
 }
 
 export default NewReleasedSection

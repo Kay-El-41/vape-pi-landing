@@ -1,10 +1,11 @@
+import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
-import ViewBtn from '../components/ViewBtn'
 import './styles/flavorsection.css'
+import ViewBtn from '../components/ViewBtn'
 import SlideNext from '../components/SlideNext'
 import SlidePrev from '../components/SlidePrev'
-import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 const SlideCard = ({ title, desc, img }) => {
   return (
@@ -75,8 +76,8 @@ const FlavorSection = () => {
 
 // Prop validation
 SlideCard.propTypes = {
-  title: String,
-  img: String,
-  desc: String,
+  title: PropTypes.string,
+  img: PropTypes.string,
+  desc: PropTypes.string,
 }
 export default FlavorSection

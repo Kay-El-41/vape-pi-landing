@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { productData } from '../product'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import PropTypes from 'prop-types'
 
 import 'swiper/css'
 import './styles/productslider.css'
@@ -64,9 +65,9 @@ const ProductSlider = ({ bgImg, img, title, desc }) => {
 }
 
 ProductSlider.propTypes = {
-  bgImg: String,
-  img: String,
-  title: String,
-  desc: String,
+  bgImg: PropTypes.string,
+  img: PropTypes.string,
+  title: PropTypes.string,
+  desc: PropTypes.string,
 }
 export default ProductSlider

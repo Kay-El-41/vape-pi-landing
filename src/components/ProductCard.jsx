@@ -1,4 +1,5 @@
 import { TiStarFullOutline } from 'react-icons/ti'
+import PropTypes from 'prop-types'
 import './styles/productcard.css'
 
 const ProductCard = ({ img, discounted }) => {
@@ -20,8 +21,8 @@ const ProductCard = ({ img, discounted }) => {
 }
 
 ProductCard.propTypes = {
-  img: String,
-  discounted: Boolean,
+  img: PropTypes.string,
+  discounted: PropTypes.bool,
 }
 
 export default ProductCard
