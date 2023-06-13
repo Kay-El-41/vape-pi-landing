@@ -14,6 +14,6 @@ const getImages = async (endpoint) => {
   return data
 }
 
-export default function fetchImages(endpoint) {
+export default function useFetchImages(endpoint) {
   return useQuery(['images', endpoint], () => getImages(endpoint))
 }

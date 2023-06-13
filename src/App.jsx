@@ -7,22 +7,22 @@ import Footer from './sections/Footer'
 import HeroSection from './sections/HeroSection'
 import NewReleasedSection from './sections/NewReleasedSection'
 
-import fetchImages from './hooks/hooks'
+import useFetchImages from './hooks/hooks'
 
 function App() {
-  const { data: heroBanners, isFetching: heroLoading } = fetchImages(
+  const { data: heroBanners, isFetching: heroLoading } = useFetchImages(
     'Miscellaneous/GetBannerList?bannerType=1'
   )
-  const { data: promoBanners, isFetching: promoLoading } = fetchImages(
-    'Product/GetLandingProductPromotion'
-  )
-  const { data: adsBanner, isFetching: adsLoading } = fetchImages(
+  const { data: adsBanner, isFetching: adsLoading } = useFetchImages(
     'Miscellaneous/GetBannerList?bannerType=2'
   )
   const { data: newArrivalBanners, isFetching: newArrivalLoading } =
-    fetchImages('Product/GetLandingProductLatest')
+    useFetchImages('Product/GetLandingProductLatest')
 
-  const { data: productLists, isFetching: productListLoading } = fetchImages(
+  const { data: promoBanners, isFetching: promoLoading } = useFetchImages(
+    'Product/GetLandingProductPromotion'
+  )
+  const { data: productLists, isFetching: productListLoading } = useFetchImages(
     'Product/GetAllProductListBuyer'
   )
 
