@@ -4,6 +4,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
+import PropTypes from 'prop-types'
+
 
 // Custom Swiper Buttons
 import SlideNext from '../components/SlideNext'
@@ -12,94 +14,85 @@ import SlidePrev from '../components/SlidePrev'
 // Section Styles
 import './styles/herosection.css'
 
-import ViewBtn from '../components/ViewBtn'
+// Redux Query TEST
+// import { useGetHeroBannerQuery } from '../services/banner'
 
-const HeroSection = () => {
+const HeroSection = ({ data }) => {
+  // const { data } = useGetHeroBannerQuery()
+
+  // if (isBannerLoading) return <h1>Loading</h1>
+
   return (
     <section id="hero" className="hero">
-      <Swiper
-        slidesPerView={'1'}
-        autoplay={true}
-        centeredSlides={true}
-        pagination={{ clickable: true }}
-        modules={[Pagination, Autoplay]}
-        loop={true}
-      >
-        {/* Cannot create a components for swiperSlider because it broke!!*/}
-        <SwiperSlide style={{ width: 'auto', height: '595px' }}>
-          <div className="hero-slide-content">
-            <div className="hero-headers">
-              <p>The Best Look</p>
-              <h1>Anytime Anywhere</h1>
-              <p>Starts from 10,000 MMK</p>
-              <ViewBtn />
-            </div>
-            {/* Black gradient overlay */}
-            <div className="hero-cover-overlay"></div>
-            <img
-              src="/hero-cover1.jpg"
-              alt="hero-image"
-              className="hero-cover-img"
-            />
-          </div>
-        </SwiperSlide>
+      <div className="webView">
+        <Swiper
+          slidesPerView={'1'}
+          autoplay={true}
+          centeredSlides={true}
+          pagination={{ clickable: true }}
+          modules={[Pagination, Autoplay]}
+          loop={true}
+        >
+          {data?.map((banner) => {
+            return (
+              banner.isWeb === 1 && (
+                <SwiperSlide
+                  style={{ width: 'auto', height: '595px' }}
+                  key={banner.id}
+                >
+                  <div className="hero-cover-overlay"></div>
+                  <img
+                    src={banner.url}
+                    alt="hero-image"
+                    className="hero-cover-img"
+                  />
+                </SwiperSlide>
+              )
+            )
+          })}
+          {/* Slide Control Buttons */}
+          <SlideNext />
+          <SlidePrev />
+        </Swiper>
+      </div>
 
-        {/* 6 Placeholders */}
-        <SwiperSlide style={{ width: 'auto', height: '595px' }}>
-          <div className="hero-cover-overlay"></div>
-          <img
-            src="/hero-cover1.jpg"
-            alt="hero-image"
-            className="hero-cover-img"
-          />
-        </SwiperSlide>
-        <SwiperSlide style={{ width: 'auto', height: '595px' }}>
-          <div className="hero-cover-overlay"></div>
-          <img
-            src="/hero-cover1.jpg"
-            alt="hero-image"
-            className="hero-cover-img"
-          />
-        </SwiperSlide>
-        <SwiperSlide style={{ width: 'auto', height: '595px' }}>
-          <div className="hero-cover-overlay"></div>
-          <img
-            src="/hero-cover1.jpg"
-            alt="hero-image"
-            className="hero-cover-img"
-          />
-        </SwiperSlide>
-        <SwiperSlide style={{ width: 'auto', height: '595px' }}>
-          <div className="hero-cover-overlay"></div>
-          <img
-            src="/hero-cover1.jpg"
-            alt="hero-image"
-            className="hero-cover-img"
-          />
-        </SwiperSlide>
-        <SwiperSlide style={{ width: 'auto', height: '595px' }}>
-          <div className="hero-cover-overlay"></div>
-          <img
-            src="/hero-cover1.jpg"
-            alt="hero-image"
-            className="hero-cover-img"
-          />
-        </SwiperSlide>
-        <SwiperSlide style={{ width: 'auto', height: '595px' }}>
-          <div className="hero-cover-overlay"></div>
-          <img
-            src="/hero-cover1.jpg"
-            alt="hero-image"
-            className="hero-cover-img"
-          />
-        </SwiperSlide>
-
-        {/* Slide Control Buttons */}
-        <SlideNext />
-        <SlidePrev />
-      </Swiper>
+      <div className="mobileView">
+        <Swiper
+          slidesPerView={'1'}
+          autoplay={true}
+          centeredSlides={true}
+          pagination={{ clickable: true }}
+          modules={[Pagination, Autoplay]}
+          loop={true}
+        >
+          {data?.map((banner) => {
+            return (
+              banner.isWeb === 0 && (
+                <SwiperSlide
+                  style={{ width: 'auto', height: '595px' }}
+                  key={banner.id}
+                >
+                  <div className="hero-cover-overlay"></div>
+                  <img
+                    src={banner.url}
+                    alt="hero-image"
+                    className="hero-cover-img"
+                  />
+                </SwiperSlide>
+              )
+            )
+          })}
+          {/* Slide Control Buttons */}
+          <SlideNext />
+          <SlidePrev />
+        </Swiper>
+      </div>
     </section>
   )
+}
+
+HeroSection.propTypes = {
+  data: PropTypes.array,
 }
 
 export default HeroSection

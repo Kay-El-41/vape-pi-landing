@@ -1,5 +1,5 @@
-import { productData } from '../product'
 import { RiArrowRightSLine } from 'react-icons/ri'
+import PropTypes from 'prop-types'
 
 // components
 import ViewBtn from '../components/ViewBtn'
@@ -8,7 +8,12 @@ import ProductCard from '../components/ProductCard'
 
 import './styles/bestdealsection.css'
 
-const BestDealSection = () => {
+// Redux Query TEST
+// import { useGetPromotionBannerQuery } from '../services/banner'
+
+const BestDealSection = ({ data }) => {
+  // const { data } = useGetPromotionBannerQuery()
+
   return (
     <section className="best-deal-section">
       <div className="best-deal-section-1">
@@ -18,12 +23,13 @@ const BestDealSection = () => {
         {/* Deals Products */}
         <div className="best-deal-products">
           {/* mapping - products card */}
-          {productData.map((product) => {
+          {data?.slice(0, 6).map((product) => {
             return (
               <ProductCard
-                key={product.cardId}
-                img={product.img}
+                key={product.productId}
+                img={product.url}
                 discounted={true}
+                {...product}
               />
             )
           })}
@@ -73,6 +79,10 @@ const BestDealSection = () => {
       </div>
     </section>
   )
+}
+
+BestDealSection.propTypes = {
+  data: PropTypes.array,
 }
 
 export default BestDealSection

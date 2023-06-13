@@ -2,29 +2,27 @@ import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import './styles/flavorsection.css'
-import ViewBtn from '../components/ViewBtn'
 import SlideNext from '../components/SlideNext'
 import SlidePrev from '../components/SlidePrev'
 import PropTypes from 'prop-types'
 
-const SlideCard = ({ title, desc, img }) => {
+// Redux Query TEST
+// import { useGetAdsBannerQuery } from '../services/banner'
+
+const SlideCard = ({ img }) => {
   return (
     <div
       className="flavor-card-long"
       style={{
-        background: `url(${img}) no-repeat left`,
+        background: `url(${img}) no-repeat`,
+        backgroundPosition: '30% 10%',
+        backgroundSize: 'cover',
       }}
-    >
-      <div>
-        <h4 className="flavor-title">{title && title}</h4>
-        <p className="flavor-desc">{desc && desc}</p>
-        <ViewBtn />
-      </div>
-    </div>
+    ></div>
   )
 }
 
-const FlavorSection = () => {
+const FlavorSection = ({ data }) => {
   const [isAtFirstSlide, setFirstSlide] = useState(true)
   const [isAtLastSlide, setLastSlide] = useState(false)
 
@@ -33,51 +31,75 @@ const FlavorSection = () => {
     swiper.isEnd ? setLastSlide(true) : setLastSlide(false)
   }
 
+  // const { data } = useGetAdsBannerQuery()
+
   return (
     <section className="flavor-section">
-      <Swiper
-        spaceBetween={'6px'}
-        slidesPerView={'auto'}
-        grabCursor={true}
-        centeredSlides={true}
-        onSlideChange={slideCheck}
-      >
-        <SwiperSlide style={{ width: 'auto', height: '240px' }}>
-          <SlideCard
-            title={'Try New Flavor'}
-            desc={'Citrus Monster'}
-            img={'/covers/v1.png'}
-          />
-        </SwiperSlide>
+      <div className="webView">
+        <Swiper
+          spaceBetween={'6px'}
+          slidesPerView={'auto'}
+          grabCursor={true}
+          centeredSlides={true}
+          onSlideChange={slideCheck}
+        >
+          {data?.map((card) => {
+            return (
+              card.isWeb === 1 && (
+                <SwiperSlide
+                  style={{ width: 'auto', height: '240px' }}
+                  key={card.productId}
+                >
+                  <SlideCard
+                    title={'Try New Flavor'}
+                    desc={'Citrus Monster'}
+                    img={card.url}
+                  />
+                </SwiperSlide>
+              )
+            )
+          })}
 
-        {/* Placeholder Cards */}
-        <SwiperSlide style={{ width: 'auto', height: '240px' }}>
-          <SlideCard
-            title={'Placeholder'}
-            desc={'Placeholder'}
-            img={'/covers/v2.png'}
-          />
-        </SwiperSlide>
+          {!isAtFirstSlide > 0 && <SlidePrev />}
+          {!isAtLastSlide > 0 && <SlideNext />}
+        </Swiper>
+      </div>
 
-        <SwiperSlide style={{ width: 'auto', height: '240px' }}>
-          <SlideCard
-            title={'Placeholder'}
-            desc={'Placeholder'}
-            img={'/covers/v3.png'}
-          />
-        </SwiperSlide>
+      <div className="mobileView">
+        <Swiper
+          spaceBetween={'6px'}
+          slidesPerView={'auto'}
+          grabCursor={true}
+          centeredSlides={true}
+          onSlideChange={slideCheck}
+        >
+          {data?.map((card) => {
+            return (
+              card.isWeb === 0 && (
+                <SwiperSlide
+                  style={{ width: 'auto', height: '240px' }}
+                  key={card.productId}
+                >
+                  <SlideCard img={card.url} />
+                </SwiperSlide>
+              )
+            )
+          })}
 
-        {!isAtFirstSlide > 0 && <SlidePrev />}
-        {!isAtLastSlide > 0 && <SlideNext />}
-      </Swiper>
+          {!isAtFirstSlide > 0 && <SlidePrev />}
+          {!isAtLastSlide > 0 && <SlideNext />}
+        </Swiper>
+      </div>
     </section>
   )
 }
 
 // Prop validation
 SlideCard.propTypes = {
-  title: PropTypes.string,
   img: PropTypes.string,
-  desc: PropTypes.string,
+}
+
+FlavorSection.propTypes = {
+  data: PropTypes.array,
 }
 export default FlavorSection

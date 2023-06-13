@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { productData } from '../product'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import PropTypes from 'prop-types'
 
@@ -10,7 +9,7 @@ import ProductCard from '../components/ProductCard'
 import SlideNext from '../components/SlideNext'
 import SlidePrev from '../components/SlidePrev'
 
-const ProductSlider = ({ bgImg, img, title, desc }) => {
+const ProductSlider = ({ bgImg, img, title, desc, products }) => {
   const [isAtFirstSlide, setFirstSlide] = useState(true)
   const [isAtLastSlide, setLastSlide] = useState(false)
 
@@ -48,13 +47,16 @@ const ProductSlider = ({ bgImg, img, title, desc }) => {
         >
           {!isAtFirstSlide > 0 && <SlidePrev />}
           {!isAtLastSlide > 0 && <SlideNext />}
-          {productData.map((product) => {
+          {products?.map((product) => {
             return (
               <SwiperSlide
                 style={{ width: 'auto', height: 'auto' }}
-                key={product.cardId}
+                key={product.productId}
               >
-                <ProductCard img={product.img} />
+                <ProductCard key={product.productId}
+                img={product.url}
+                discounted={true}
+                {...product} />
               </SwiperSlide>
             )
           })}
@@ -69,5 +71,6 @@ ProductSlider.propTypes = {
   img: PropTypes.string,
   title: PropTypes.string,
   desc: PropTypes.string,
+  products: PropTypes.array,
 }
 export default ProductSlider

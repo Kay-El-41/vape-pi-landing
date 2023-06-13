@@ -9,6 +9,8 @@
 }
 
 .card-image {
+  position: relative;
+
   background-color: var(--color-gray);
   display: flex;
   flex-direction: column;
@@ -19,12 +21,16 @@
 }
 
 .card-image img {
-  height: 136px;
+  height: 100%;
+  border-radius: 10px;
   width: fit-content;
   margin-inline: auto;
 }
 
 .discount-red {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   height: 20px;
   width: 70px;
   margin-inline: auto;

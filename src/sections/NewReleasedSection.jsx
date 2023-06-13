@@ -1,23 +1,30 @@
 import PropTypes from 'prop-types'
-import { flavorData } from '../product'
 import './styles/newreleasedsection.css'
 import ViewmoreBtn from '../components/ViewmoreBtn'
 
-const FlavorCard = ({ title, img }) => {
+// Redux Query TEST
+// import { useGetNewArrivalBannerQuery } from '../services/banner'
+
+const FlavorCard = ({ title, img, price }) => {
   return (
     <div
       className="flavor-card"
       style={{
-        background: `url(${img}) no-repeat right`,
+        background: `url(${img}) no-repeat`,
+        backgroundPosition: ' 10%',
+        backgroundSize: 'cover',
       }}
     >
       <h4>{title}</h4>
-      <p>30,000 MMK</p>
+      <p>{price} MMK</p>
     </div>
   )
 }
 
-const NewReleasedSection = () => {
+const NewReleasedSection = ({ data }) => {
+  // FROM REDUX
+  // const { data } = useGetNewArrivalBannerQuery()
+
   return (
     <section className="new-section">
       <h2 className="section-title">
@@ -25,12 +32,13 @@ const NewReleasedSection = () => {
       </h2>
       <p className="section-desc">Try Our Latest Flavors Here</p>
       <div className="new-flavor-section">
-        {flavorData.map((flavor) => {
+        {data?.slice(0, 4).map((flavor) => {
           return (
             <FlavorCard
-              key={flavor.cardId}
-              img={flavor.img}
-              title={flavor.title}
+              key={flavor.productId}
+              img={flavor.url}
+              title={flavor.name}
+              price={flavor.promotePrice}
             />
           )
         })}
@@ -44,6 +52,11 @@ const NewReleasedSection = () => {
 FlavorCard.propTypes = {
   title: PropTypes.string,
   img: PropTypes.string,
+  price: PropTypes.number,
+}
+
+NewReleasedSection.propTypes = {
+  data: PropTypes.array,
 }
 
 export default NewReleasedSection
